@@ -1,0 +1,318 @@
+/* ======================== CSS VARIABLE ====================*/
+
+:root {
+
+
+    --header-height: 4rem;
+    --footer-height: 3rem;
+    --text-color: #303030;
+    --body-color: #fff;
+    --container-color: #F1EBE2;
+    --main-blue-color: #289FED;
+    --form-error-color: #dc3545;
+
+    /*======== Font and typography ========*/
+    --body-font: 'Poppins', sans-serif;
+
+    /*========== z index ==========*/
+    --z-fixed: 100;
+}
+
+
+/*==================== BASE ====================*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 0 var(--header-height) 0;
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+
+/*==================== LAYOUT ====================*/
+.container {
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+
+/*==================== NAV ====================*/
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+}
+
+.nav {
+    max-width: 968px;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.nav__title {
+    cursor: pointer;
+}
+
+.nav__buttons {
+    display: inline-flex;
+    gap: 1rem;
+}
+
+.nav__buttons button {
+    padding: 2px 8px;
+    border: 2px solid black;
+    background-color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 3px 2px 0px 0px var(--main-blue-color), 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#delete-product-btn:hover {
+    box-shadow: 3px 2px 0px 0px #ed2828, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#add-product-btn:hover {
+    box-shadow: 3px 2px 0px 0px #28ed28, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#cancel-btn {
+    box-shadow: 3px 2px 0px 0px #ed2828, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.horizontal-line {
+    border-top: 1px solid #8c8b8b;
+    width: 100%;
+}
+
+
+
+/*==================== MAIN ====================*/
+.main {
+    padding: var(--header-height) 0 0 0;
+}
+
+.list__grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 20px;
+}
+
+.list__item {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    border-radius: 0.15rem;
+    padding: 10px;
+    text-align: center;
+    opacity: 1;
+    transition: 1s;
+}
+
+.list__item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 6px;
+    padding-bottom: 10px;
+    transition: .3s;
+}
+
+.list__item-price {
+    font-weight: 600;
+}
+
+.list__item-price::after {
+    content: " $";
+}
+
+.list__error {
+    font-size: 1.2rem;
+}
+
+.delete-checkbox {
+    height: 1rem;
+    width: 1rem;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"]:checked+div {
+    transform: scale(1.05);
+    box-shadow: 5px 8px 5px -5px var(--main-blue-color);
+}
+
+
+
+
+/*==================== PRODUCT FORM ====================*/
+#product_form {
+    padding: 20px 0px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#generate-btn {
+    cursor: pointer;
+    width: 140px;
+    padding: 12px 12px;
+    margin: 8px 0;
+    margin-left: 4px;
+    color: #333;
+    background-color: var(--body-color);
+    background-image: none;
+    border: 3px solid #cccccc;
+
+}
+
+#generate-btn:hover {
+    border: 3px solid #555;
+}
+
+.form__component {
+    padding: 10px 10px;
+    width: 100%;
+    margin: auto;
+}
+
+.form__component-sku {
+    display: flex;
+}
+
+.form__attributes {
+    display: none;
+}
+
+.active-attribute {
+    display: block;
+}
+
+.form__attributes_description {
+    padding: 0px 10px;
+}
+
+.form__error {
+    float: inline-end;
+    color: var(--form-error-color);
+    transition-property: all;
+    transition-duration: 2s;
+}
+
+#productType {
+    cursor: pointer;
+    max-width: 320px;
+    padding: 12px 12px;
+    margin: 5px 0px;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #333;
+    background-color: var(--body-color);
+    background-image: none;
+    border: 1px solid #cccccc;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+/*==================== FOOTER ====================*/
+
+.footer {
+    width: 100%;
+    height: var(--footer-height);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--body-color);
+}
+
+.footer__content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer__text {
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+/* ================== MEDIA QUERIES ================== */
+
+@media screen and (min-width: 350px) {
+    .list__grid {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 30px 20px;
+    }
+
+    #product_form {
+        width: 350px;
+    }
+
+}
+
+@media screen and (min-width: 568px) {
+    .list__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #product_form {
+        width: 500px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+
+    .list__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #product_form {
+        width: 600px;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .list__grid {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 20px 0px;
+    }
+
+}
