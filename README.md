@@ -9,6 +9,9 @@ Task: A web-app containing <b>Product list page</b> and <b>Adding a product page
 - [x] MySQL logic handled by objects with properties.
 - [x] Responsive Web Design.
 
-![This is an image](https://github.com/jakubdura/scandiweb-product-page/blob/main/list_page.jpg)
+<img src="https://github.com/jakubdura/scandiweb-product-page/blob/main/addproduct_page.jpg" width=80%>
 
-![This is an image](https://github.com/jakubdura/scandiweb-product-page/blob/main/addproduct_page.jpg)
+<img src="https://github.com/jakubdura/scandiweb-product-page/blob/main/list_page.jpg" width=80%>
+
+
+
